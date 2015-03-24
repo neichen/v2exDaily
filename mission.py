@@ -9,14 +9,14 @@ from config import username, password
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-index_url = "http://www.v2ex.com"
-login_url = "http://www.v2ex.com/signin"
-daily_url = "http://www.v2ex.com/mission/daily"
+index_url = "https://www.v2ex.com"
+login_url = "https://www.v2ex.com/signin"
+daily_url = "https://www.v2ex.com/mission/daily"
 headers = {
     "User-Agent": "UA",
     "Host": "v2ex.com",
     "Origin": "http://v2ex.com",
-    "Referer": "http://www.v2ex.com/signin"
+    "Referer": "https://www.v2ex.com/signin"
 }
 
 s = requests.Session()
@@ -90,7 +90,7 @@ def show_balance():
         if not s_list[1]:
             s_list[1] = '00'
         if len(s_list[1]) == 1:
-            s_list = '0' + s_list
+            s_list[1] = '0' + s_list[1]
         log("账户余额为{0}".format(''.join(s_list)))
 
         return True
