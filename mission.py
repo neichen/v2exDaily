@@ -91,6 +91,10 @@ def show_balance():
             s_list[1] = '00'
         if len(s_list[1]) == 1:
             s_list[1] = '0' + s_list[1]
+        if not s_list[2]:
+            s_list[2] = '00'
+        if len(s_list[2]) == 1:
+            s_list[2] = '0' + s_list[2]
         log("账户余额为{0}".format(''.join(s_list)))
 
         return True
